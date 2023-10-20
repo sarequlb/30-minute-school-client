@@ -1,6 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Courses from "../../Pages/Courses/Courses";
+import Course from "../../Pages/Course/Course";
+import Category from "../../Pages/Category/Category";
+import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
+import Signup from "../../Pages/Signup/Signup";
+import Terms from "../../Pages/Terms/Terms";
+import Signin from "../../Pages/Signin/Signin";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 export const routes = createBrowserRouter([
     {
@@ -8,9 +15,40 @@ export const routes = createBrowserRouter([
         element: <Main></Main>,
         children: [
            {
+            path:'/',
+            loader:() => fetch('https://30-minute-school-server.vercel.app/courses'),
+            element:<Courses></Courses>
+           },
+           {
             path:'/courses',
             loader:() => fetch('https://30-minute-school-server.vercel.app/courses'),
             element:<Courses></Courses>
+           },
+           {
+            path:'/courses/:id',
+            loader:({params}) => {
+              return  fetch(`https://30-minute-school-server.vercel.app/courses/${params.id}`)
+            },
+            element:<Category></Category>
+           },
+           {
+            path:'/course/:id',
+            loader:({params}) => {
+              return  fetch(`https://30-minute-school-server.vercel.app/course/${params.id}`)
+            },
+            element:<PrivateRoutes><CourseDetails></CourseDetails></PrivateRoutes>
+           },
+           {
+            path:'/signup',
+            element:<Signup></Signup>
+           },
+           {
+            path:'/signin',
+            element:<Signin></Signin>
+           },
+           {
+            path:'/terms',
+            element:<Terms></Terms>
            }
 
         ]

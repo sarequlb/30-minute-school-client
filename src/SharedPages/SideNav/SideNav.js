@@ -12,9 +12,9 @@ const SideNav = () => {
     }, [])
     return (
             <div className='bg-secondary-subtle text-center p-5  side-nav'>
-                <p>Courses Category</p>
+                <h3>Courses <span className='text-danger'>Category</span></h3>
                 {
-                    categories.map(category => <p className='py-lg-5 my-lg-3'><NavLink to={`category/${category.id}`} className='text-decoration-none text-black' key={category.id}>{category.name}</NavLink></p>)
+                    categories.map(category => <p className='py-lg-5 my-lg-3'><NavLink to={`courses/${category.id}`} className='text-decoration-none text-black' key={category.id}>{category.name}</NavLink></p>)
                 }
             </div>
     );

@@ -1,24 +1,24 @@
 import React from 'react';
+import { Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
-const Course = ({ course }) => {
-    const { img } = course
+
+const Course = ({course}) => {
+    const {img,title,coursePrice,id} = course;
     return (
-        <div className='border m-5'>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
-            {/* <img className='w-25 h-25' src={img}></img> */}
-        </div>
+         <Card className='shadow-lg border-0 mb-4' style={{ width: '18rem' }}>
+            <Image className='h-75 rounded m-2' src={img}></Image>
+         {/* <Card.Img className='h-75 p-2 rounded' variant="top" src={img} rounded/> */}
+         <Card.Body>
+           <Card.Title>{title}</Card.Title>
+           <Card.Text>
+             Course Price: {coursePrice}
+           </Card.Text>
+           <Link to={`/course/${id}`}><Button variant="primary">Course Details</Button></Link>
+         </Card.Body>
+       </Card>
     );
 };
 
