@@ -7,10 +7,11 @@ import githubPng from '../../images/GitHub_logo.png'
 import './Signin.css'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 const Signin = () => {
     const [error, setError] = useState(null)
-    const {loginUser,passwordReset} = useContext(AuthContext)
-    const [userEmail,setUserEmail,emailVerify] = useState(null)
+    const {loginUser,passwordReset,googleSignin,githubSignin} = useContext(AuthContext)
+    const [userEmail,setUserEmail] = useState(null)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -27,7 +28,6 @@ const Signin = () => {
                 navigate(from, {replace:true})
             }
             else{
-                // handleEmailVerification()
                 toast.error('your email is not verify.please verify your email')
                 
             }
@@ -37,11 +37,44 @@ const Signin = () => {
             setError(error.message)
         })
     }
-    const handleEmailVerification = () =>{
-        emailVerify()
-        .then(() =>{})
-        .catch(error => console.error(error))
-    }
+
+
+    const handleGoogle = () =>{
+        const googleProvider = new GoogleAuthProvider;
+        googleSignin(googleProvider)
+        .then((result) =>{
+            const user = result.user;
+            if(user.emailVerified){
+                navigate(from, {replace:true})
+            }
+            else{
+                toast.error('your email is not verify.please verify your email')
+                
+            }
+            console.log(user)
+        })
+        .catch(error =>{
+          console.log(error)
+        })
+      }
+      const handleGithub = () =>{
+        const githubProvider = new GithubAuthProvider;
+        githubSignin(githubProvider)
+        .then((result) =>{
+            const user = result.user;
+            if(user.emailVerified){
+                navigate(from, {replace:true})
+            }
+            else{
+                toast.error('your email is not verify.please verify your email')
+                
+            }
+            console.log(user)
+        })
+        .catch(error =>{
+          console.log(error)
+        })
+      }
 
     const handleResetEmail =() =>{
         if(!userEmail){
@@ -84,8 +117,8 @@ const Signin = () => {
                 <div className='mx-auto mt-3'>
                     <p>or login with</p>
                     
-                    <Button className='px-5 fw-bold mb-3' variant="primary"><img className='img-google' src={googlePng}></img><span className='mx-3'>Google</span></Button>
-                    <Button className='fw-bold' variant="danger"><img className='img-github' src={githubPng}></img><span className='mx-3'>Github</span></Button>
+                    <Button onClick={handleGoogle} className='px-5 fw-bold mb-3' variant="primary"><img className='img-google' src={googlePng}></img><span className='mx-3'>Google</span></Button>
+                    <Button onClick={handleGithub} className='fw-bold' variant="danger"><img className='img-github' src={githubPng}></img><span className='mx-3'>Github</span></Button>
 
                     
                 </div>

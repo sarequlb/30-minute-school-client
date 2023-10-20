@@ -8,6 +8,7 @@ import Signup from "../../Pages/Signup/Signup";
 import Terms from "../../Pages/Terms/Terms";
 import Signin from "../../Pages/Signin/Signin";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
 
 export const routes = createBrowserRouter([
     {
@@ -52,5 +53,10 @@ export const routes = createBrowserRouter([
            }
 
         ]
+        
+    },
+    {
+      path:'*',
+      element: <PageNotFound></PageNotFound>
     }
 ])

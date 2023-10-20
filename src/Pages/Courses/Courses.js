@@ -5,7 +5,6 @@ import './Courses.css'
 
 const Courses = () => {
     const courses = useLoaderData()
-    console.log(courses)
     return (
         <div className='container courses-container mt-5 mx-5'>
             {

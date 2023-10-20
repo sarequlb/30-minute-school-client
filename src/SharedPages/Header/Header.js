@@ -9,13 +9,15 @@ import { Link, NavLink } from 'react-router-dom';
 import SideNav from '../SideNav/SideNav';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaUser, FaSignOutAlt } from "react-icons/fa";
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext)
-  console.log(user)
+  const { user, logOut, googleSignin } = useContext(AuthContext)
   const handleSignOut = () => {
     logOut()
   }
+
+ 
   return (
     <Navbar expand="lg" className="bg-secondary-subtle w-100">
       <Container>

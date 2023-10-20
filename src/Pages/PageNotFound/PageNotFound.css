@@ -1,0 +1,11 @@
+.not-found{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 90px;
+}
+.ops{
+    font-size:8em;
+    color: rgba(255, 115, 0, 0.788);
+}
