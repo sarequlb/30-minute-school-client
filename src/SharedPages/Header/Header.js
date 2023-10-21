@@ -47,7 +47,7 @@ const Header = () => {
               user?.emailVerified ?
             <>
                {
-                    user.photoURL?<Link><Image style={{height: '40px'}} src={user?.photoURL} roundedCircle></Image></Link>:<FaUser style={{height: '40px'}}></FaUser>
+                    user.photoURL?<Link to={'/profile'}><Image style={{height: '40px'}} src={user?.photoURL} roundedCircle></Image></Link>:<FaUser style={{height: '40px'}}></FaUser>
                   }
                    <Button onClick={handleSignOut} className='bg-danger'><Link className='text-decoration-none text-white'><FaSignOutAlt></FaSignOutAlt></Link></Button>
             </>

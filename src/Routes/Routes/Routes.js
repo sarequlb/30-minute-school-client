@@ -9,6 +9,9 @@ import Terms from "../../Pages/Terms/Terms";
 import Signin from "../../Pages/Signin/Signin";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
+import CoursePurchased from "../../Pages/CoursePurchased/CoursePurchased";
+import Faq from "../../Pages/Faq/Faq";
+import Profile from "../../Pages/Profile/Profile";
 
 export const routes = createBrowserRouter([
     {
@@ -58,5 +61,21 @@ export const routes = createBrowserRouter([
     {
       path:'*',
       element: <PageNotFound></PageNotFound>
+    },
+    {
+      path:'/purchased',
+      element:<CoursePurchased></CoursePurchased>
+    },
+    {
+      path:'/faq',
+      element:<Faq></Faq>
+    },
+    {
+      path:'/purchased',
+      element:<CoursePurchased></CoursePurchased>
+    },
+    {
+      path:'/profile',
+      element:<Profile></Profile>
     }
 ])

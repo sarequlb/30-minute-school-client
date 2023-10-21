@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className='mt-5'>
 
-            <footer class="text-center text-lg-start bg-light text-muted pt-4">
+            <footer class="text-center text-lg-start bg-light text-muted pt-4 footer">
 
             
                 <section class="">
@@ -27,16 +27,16 @@ const Footer = () => {
                                 </h6>
                                 <div className='d-lg-flex gap-2'>
                                     <p>
-                                        <Link className='text-decoration-none text-black'><FaFacebook></FaFacebook></Link>
+                                        <Link to={'https://www.facebook.com/kazeesiam'} className='text-decoration-none text-black'><FaFacebook></FaFacebook></Link>
                                     </p>
                                     <p>
-                                        <Link className='text-decoration-none text-black'><FaInstagram></FaInstagram></Link>
+                                        <Link to={'https://www.instagram.com/__imsiam__/'} className='text-decoration-none text-black'><FaInstagram></FaInstagram></Link>
                                     </p>
                                     <p>
-                                        <Link className='text-decoration-none text-black'><FaYoutube></FaYoutube></Link>
+                                        <Link to={'https://www.youtube.com/'} className='text-decoration-none text-black'><FaYoutube></FaYoutube></Link>
                                     </p>
                                     <p>
-                                        <Link className='text-decoration-none text-black'><FaTwitter></FaTwitter></Link>
+                                        <Link to={'https://twitter.com/KaziSiam817741'} className='text-decoration-none text-black'><FaTwitter></FaTwitter></Link>
                                     </p>
                                 </div>
                             </div>
@@ -57,8 +57,9 @@ const Footer = () => {
                     </div>
                 </section>
                 <div class="text-center p-4">
-                    © 2021 Copyright:
+                    © 2023 Copyright:
                     <Link className='text-decoration-none text-black'>30 Minute School</Link>
+                    <p>Developed By <Link className='text-decoration-none' to={'https://www.facebook.com/kazeesiam'}>Kazee Siam</Link></p>
                 </div>
             </footer>
         </div>

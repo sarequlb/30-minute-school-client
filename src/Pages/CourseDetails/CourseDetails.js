@@ -42,7 +42,7 @@ const CourseDetails = () => {
                     </Card.Text>
                     <p>Instructor: {mentorName} <p>({education})</p></p>
                     <p>Rating: {rating}</p>
-                    <Button variant="primary">Buy Now</Button>
+                   <Link to={'/purchased'}> <Button variant="primary">Buy Now</Button></Link>
                 </Card.Body>
             </Card>
 
