@@ -65,19 +65,19 @@ export const routes = createBrowserRouter([
     },
     {
       path:'/purchased',
-      element:<CoursePurchased></CoursePurchased>
+      element:<PrivateRoutes><CoursePurchased></CoursePurchased></PrivateRoutes>
     },
     {
       path:'/faq',
-      element:<Faq></Faq>
+      element:<PrivateRoutes><Faq></Faq></PrivateRoutes>
     },
     {
       path:'/purchased',
-      element:<CoursePurchased></CoursePurchased>
+      element:<PrivateRoutes><CoursePurchased></CoursePurchased></PrivateRoutes>
     },
     {
       path:'/profile',
-      element:<Profile></Profile>
+      element:<PrivateRoutes><Profile></Profile></PrivateRoutes>
     },
     {
       path:'/blog',
