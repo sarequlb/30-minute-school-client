@@ -12,6 +12,7 @@ import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
 import CoursePurchased from "../../Pages/CoursePurchased/CoursePurchased";
 import Faq from "../../Pages/Faq/Faq";
 import Profile from "../../Pages/Profile/Profile";
+import Blog from "../../Pages/Blog/Blog";
 
 export const routes = createBrowserRouter([
     {
@@ -77,5 +78,9 @@ export const routes = createBrowserRouter([
     {
       path:'/profile',
       element:<Profile></Profile>
+    },
+    {
+      path:'/blog',
+      element:<Blog></Blog>
     }
 ])
