@@ -94,11 +94,11 @@ const Signup = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="text" placeholder="Password" name='password' required />
+                    <Form.Control type="password" placeholder="Password" name='password' required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type="text" placeholder="Confirm Password" name='confirmPassword' required />
+                    <Form.Control type="password" placeholder="Confirm Password" name='confirmPassword' required />
                 </Form.Group>
                 <Form.Text className="text-danger">
                     {error}
